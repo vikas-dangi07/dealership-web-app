@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Login | Cars Dealership{% endblock %}
+{% block content %}
+<section class="form-card"><p class="eyebrow">WELCOME BACK</p><h1>Login</h1>
+<form method="post">{% csrf_token %}{{ form.as_p }}<button class="button" type="submit">Log in</button></form>
+<p>For local demo only, run <code>python manage.py seed_demo</code> and use demo / DemoPass123!.</p></section>
+{% endblock %}

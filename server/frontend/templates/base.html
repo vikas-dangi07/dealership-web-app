@@ -1,0 +1,17 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}Cars Dealership{% endblock %}</title>
+<link rel="stylesheet" href="{% static 'css/site.css' %}">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="/">Cars Dealership</a>
+<nav><a href="/">Home</a><a href="/about/">About Us</a><a href="/contact/">Contact Us</a>
+{% if request.user.is_authenticated %}<span class="user-pill">{{ request.user.username }}</span><a href="/admin/">Admin</a>
+{% else %}<a href="/accounts/login/">Login</a>{% endif %}</nav></header>
+<main>{% block content %}{% endblock %}</main>
+<footer>Cars Dealership Capstone · Demo application</footer>
+<script src="{% static 'js/app.js' %}"></script>
+</body></html>

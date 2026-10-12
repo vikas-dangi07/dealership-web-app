@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Dealers | Cars Dealership{% endblock %}
+{% block content %}
+<section class="hero"><div><p class="eyebrow">FIND YOUR NEXT DRIVE</p><h1>Explore trusted dealerships.</h1>
+<p>Browse dealership branches, compare details and read customer reviews.</p>
+<a class="button" href="#dealers">Browse dealers</a></div>
+<img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1100&q=80" alt="Modern car on a road"></section>
+<section id="dealers" class="section"><div class="section-head"><div><p class="eyebrow">OUR NETWORK</p><h2>Dealerships</h2></div>
+<label>Filter by state <select id="state-filter"><option value="">All states</option><option>Kansas</option><option>Illinois</option><option>Arizona</option></select></label></div>
+<div id="dealer-list" class="dealer-grid"><p>Loading dealerships…</p></div></section>
+{% if request.user.is_authenticated %}<p class="signed-in">Signed in as <strong>{{ request.user.username }}</strong>. You can submit reviews for dealerships.</p>{% else %}<p class="signed-in">You are browsing as a guest. <a href="/accounts/login/">Log in</a> to post a review.</p>{% endif %}
+{% endblock %}
